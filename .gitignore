@@ -1,1 +1,6 @@
 .DS_Store
+.vscode
+docker/db/data/*
+docker/db/sql/*
+*.log
+config.ini
