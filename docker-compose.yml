@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  scrapingDB:
+    image: mysql:5.7
+    container_name: scrapingDB
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: sugar
+      MYSQL_PASSWORD: sugar
+      MYSQL_DATABASE: scrapingDB
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3309:3306
+  go:
+    container_name: go
+    build: ./docker/golang
+    tty: true
+    ports:
+      - 8899:80
+    volumes:
+      - ./:/var/www/html
