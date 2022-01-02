@@ -28,7 +28,7 @@ func TestCalPages(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		pageNum, err := common.CalPages(c.count)
+		pageNum, err := utils.CalPages(c.count)
 		if err != nil && !c.err {
 			t.Errorf("数値変換ができていないですよ。\n詳細:%v", err)
 		}
@@ -49,7 +49,7 @@ func TestSetLog(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		common.SetLog(c.file)
+		utils.SetLog(c.file)
 		// Log書き込み
 		log.Println(c.comment)
 
@@ -91,7 +91,7 @@ func TestConvertImageToStr_Success(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		kanji, err := common.ConvertImageToStr("../../test/image/" + c.file)
+		kanji, err := utils.ConvertImageToStr("../../test/image/" + c.file)
 		if err != nil {
 			t.Fatalf("漢字の変換に失敗しました。\n詳細:%v", err)
 		}
@@ -117,7 +117,7 @@ func TestConvertImageToStr_Fail(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		kanji, err := common.ConvertImageToStr("../../test/image/" + c.file)
+		kanji, err := utils.ConvertImageToStr("../../test/image/" + c.file)
 		if err != nil {
 			t.Fatalf("漢字の変換に失敗しました。\n詳細:%v", err)
 		}
@@ -145,7 +145,7 @@ func TestCreateDirectory(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		if err := common.CreateDirectory(c.dirname); err != nil {
+		if err := utils.CreateDirectory(c.dirname); err != nil {
 			t.Errorf("ディレクトリの作成に失敗しています。\n詳細:%v", err)
 		}
 
@@ -170,7 +170,7 @@ func TestB2i(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		resInt := common.B2i(c.flg)
+		resInt := utils.B2i(c.flg)
 		if resInt != c.expected {
 			t.Errorf("要素が一致しません。\nreal:%v\nexpected:%v", resInt, c.expected)
 		}
