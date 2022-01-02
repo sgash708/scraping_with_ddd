@@ -1,0 +1,31 @@
+[web]
+LAWURL=https://example.com/lawyer_url
+OFFURL=https://example.com/office_url
+
+[chatwork]
+TOKEN=xxxxxxxxxxxxx
+URL=https://api.chatwork.com/v2/rooms/1111111111/messages
+Message=`[toall]
+実行日時: `
+
+[dev]
+USER=xxxx
+PASS=xxxx
+NAME=xxxxxxx
+HOST=xxxxx
+PORT=3306
+
+[pro]
+USER=xxxxxxx
+PASS=xxxxxxx
+NAME=xxxxxxxxx
+HOST=xxxxxxxxx
+PORT=3306
+
+[ssh]
+HOST=xxxxxx
+PORT=22
+USER=xxxxx
+PASS=`-----BEGIN RSA PRIVATE KEY-----
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-----END RSA PRIVATE KEY-----`
