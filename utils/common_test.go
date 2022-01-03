@@ -30,7 +30,7 @@ func TestCalPages(t *testing.T) {
 	for _, c := range cases {
 		pageNum, err := utils.CalPages(c.count)
 		if err != nil && !c.err {
-			t.Errorf("数値変換ができていないですよ。\n詳細:%v", err)
+			t.Errorf("数値変換ができていません。\n詳細:%v", err)
 		}
 		if pageNum != c.pages {
 			t.Errorf("ページの計算ができていません。\nreal:%v\nexpected:%v", pageNum, c.pages)
@@ -172,7 +172,7 @@ func TestB2i(t *testing.T) {
 	for _, c := range cases {
 		resInt := utils.B2i(c.flg)
 		if resInt != c.expected {
-			t.Errorf("要素が一致しません。\nreal:%v\nexpected:%v", resInt, c.expected)
+			t.Errorf("要素が一致していません。\nreal:%v\nexpected:%v", resInt, c.expected)
 		}
 	}
 }
