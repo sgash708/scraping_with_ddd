@@ -10,6 +10,7 @@ down:
 .PHONY: exec
 exec:
 	docker-compose exec go bash
+
 .PHONY: fmt
 fmt:
 	docker-compose run --rm go go fmt ./...
